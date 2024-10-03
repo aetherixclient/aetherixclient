@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherix</title>
+    <link rel="stylesheet" href="uscab.css">
+    <link rel="icon" href="logo.png">
+    <style>
+        .notification {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="aetherixclient.github.io" class="logo">
+            <img src="logo.png" alt="Logo" width="50">
+        </a>
+        <div class="get-auth-panel">
+            <span>GetAuth</span>
+        </div>
+        <a href="#" class="documentation">Documentation</a>
+    </div>
+
+    <div class="verh">
+        <img src="backlight2.png" class="backlight">
+        <img src="setka2.png" class="setka">
+    </div>
+
+    <div class="main">
+        <div class="panel">
+            <img src="очередная ава мне.png" class="avatar" id="avatar" alt="Avatar" style="cursor: pointer;">
+            <span class="nickname">omagad</span>
+            <script>
+                const nickname = sessionStorage.getItem('nickname');
+                document.querySelector('.nickname').textContent = nickname;
+            </script>
+            <button href="#" class="reshwid" id="reset-hwid-btn">Reset HWID</button>
+            <button href="#" class="respass" id="respass-btn">Reset password</button>
+        </div>
+
+        <div class="panel2">
+            <div class="container">
+                <div class="minipanel certain">
+                    <h3 class="product-title">Certain</h3>
+                    <p class="product-description">Позволяет покупать скины дешевле 0.99G.</p>
+                    <input type="text" id="certint" class="key-input" placeholder="Введите ключ">
+                    <button id="certbtn" class="buy-button">Авторизовать</button>
+                </div>
+                
+                <div class="minipanel stickers">
+                    <h3 class="product-title">Stickers</h3>
+                    <p class="product-description">Позволяет покупать скины с 4 наклейками.</p>
+                    <input type="text" id="stickerint" class="key-input" placeholder="Введите ключ">
+                    <button id="stickerbtn" class="buy-button">Авторизовать</button>
+                </div>
+                
+                <div class="minipanel lowprice">
+                    <h3 class="product-title">LowPrice</h3>
+                    <p class="product-description">Позволяет покупать скины за низкую цену.</p>
+                    <input type="text" id="lowint" class="key-input" placeholder="Введите ключ">
+                    <button id="lowbtn" class="buy-button">Авторизовать</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="dots"></div>
+
+    <div class="notification" id="notification">
+        Новый пароль: <span id="new-password"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

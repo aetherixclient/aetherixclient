@@ -1,0 +1,477 @@
+/* Основные стили */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body.blur {
+    filter: blur(3px); /* Применяем размытие на 3 пикселя */
+    transition: filter 0.3s ease; /* Плавный переход размытия */
+}
+
+
+@font-face {
+    font-family: 'Franklin Gothic Medium';
+    src: url('fonts/FranklinGothicMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.verh {
+    z-index: 0;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    transform: translateX(920px) translateY(30px);
+}
+
+.documentation {
+    color: #998bb8;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 40px;
+    transform: translateX(420px) translateY(30px);
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.documentation:hover {
+    color: #704fb8;
+}
+
+/* Стили для панели GetAuth */
+.get-auth-panel {
+    border: 2px solid #998bb88a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 40px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    color: #998bb8;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    transform: translateY(30px) translateX(1060px);
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transform: translateX(-20px) translateY(820px);
+    width: 200px;
+    box-shadow: none;
+}
+
+.auth-buttons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    font-family: Arial Bold, Arial, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    width: 10px;
+    z-index: 1;
+}
+
+.auth-buttons a.login {
+    background-color: #ffffff2a;
+    color: #adadad;
+    padding: 12px 16px 4px 16px;
+    border-radius: 10px;
+    height: 25px;
+    width: 150px;
+    line-height: -10px;
+    z-index: 0;
+    transition: backgorund-color 0.3s;
+}
+
+.auth-buttons a.signup {
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    width: 70px;
+    z-index: 1;
+    margin-left: 0;
+    transform: translateX(75px) translateY(4px);
+}
+
+.auth-buttons a.login:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.auth-buttons a.login span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+/* Обертка для новых элементов */
+.new-container {
+    position: relative;
+    overflow: hidden; /* Не даст новым элементам влиять на backlights и setka */
+}
+
+/* Основной контент */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 34px;
+    margin: 0;
+    color:#998bb850;
+    transform: translateY(40px) translateX(10px);
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.content h2 {
+    font-size: 150px;
+    transform: translateY(-90px) translateX(10px);
+    background: linear-gradient(to bottom, #998bb8, #0000004b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.content p {
+    font-size: 30px;
+    transform: translateY(-180px) translateX(10px);
+    color:#998bb850;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+/* Анимация точек */
+.dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: -1;
+    background: radial-gradient(#303030 1px, transparent 1px);
+    background-size: 15px 15px;
+    animation: moveDots 30s linear infinite;
+}
+
+@keyframes moveDots {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Восстановленные стили backlights */
+.backlight {
+    position: fixed;
+    z-index: -2;
+    pointer-events: none; /* Чтобы элемент не мешал взаимодействию с другими объектами */
+}
+
+/* Восстановленные стили setka */
+.setka {
+    position: fixed;
+    transform: translateX(40px);
+}
+
+.panel {
+    z-index: 2;
+    background-color: #44444431;
+    height: 420px;
+    width: 620px;
+    border-radius: 30px;
+    transform: translateX(670px) translateY(180px);
+    border: 1px solid #704fb873;
+    backdrop-filter: blur(3px);
+}
+
+.panel2 {
+    z-index: 2;
+    background-color: #44444431;
+    height: 260px;
+    width: 620px;
+    border-radius: 30px;
+    transform: translateX(670px) translateY(215px);
+    border: 1px solid #704fb873;
+    backdrop-filter: blur(3px);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Размещает элементы с равным промежутком */
+    gap: -15px; /* Устанавливает расстояние между элементами */
+}
+
+.bought {
+    z-index: 2;
+}
+
+.minipanel {
+    z-index: 10;
+    background-color: #4444445e;
+    height: 200px;
+    width: 200px;
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 1px solid #704fb873;
+    margin: 20px 0; /* Верхний и нижний отступы */
+    margin-left: 20px;
+    margin-right: 20px;
+    transform: translateY(10px);
+    overflow: hidden; /* Скрывает элементы, выходящие за пределы панели */
+    position: relative;
+}
+
+.minipanel {
+    background-color: #3d3d3d1a;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(5px);
+}
+
+.product-title {
+    font-size: 18px;
+    color: #c5b3eb7a;
+    margin-bottom: 10px;
+    transform: translateY(-25px);
+}
+
+.panel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #c5b3eb2f;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transform: translateY(-40px);
+}
+
+.buy-button {
+    background-color: #7736b879;
+    color: white;
+    border: none;
+    width: 150px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    transform: translateY(0px);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: box-shadow 0.3s ease;
+}
+
+.pay-info {
+    color: #c5b3eb7a;
+    transform: translateY(-95px);
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.buy-button:hover {
+    box-shadow: inset 0 0 25px #c5b3eb33;
+}
+
+
+.avatar {
+    height: 260px;
+    width: 260px;
+    border-radius: 30px;
+    transform: translateX(30px) translateY(30px);
+    transition: opacity 0.3s ease;
+}
+
+.avatar:hover {
+    opacity: 50%;
+}
+
+.nickname {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    position: relative;
+    top: 50px; /* Двигаем вверх */
+    left: 80px; /* Двигаем вправо */
+    font-size: 34px;
+    line-height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    color: #704fb8;
+}
+
+.online {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    position: relative;
+    top: 70px;
+    left: -310px;
+    font-size: 34px;
+    margin-left: 30px;
+    color: #704fb83f;
+}
+
+.reshwid {
+    position: fixed;
+    left: 30px; /* Явное положение относительно левого края экрана */
+    bottom: 30px; /* Явное положение относительно нижнего края экрана */
+    display: inline-block;
+    border-radius: 20px;
+    height: 80px;
+    width: 260px;
+    cursor: pointer;
+    overflow: hidden;
+    
+    background-color: #7736b84b;
+    color: white;
+    border: none;
+    color: #c9c9c994;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.respass {
+    position: fixed;
+    left: 330px; /* Явное положение относительно левого края экрана */
+    top: 310px; /* Явное положение относительно верхнего края экрана */
+    display: inline-block;
+    border-radius: 20px;
+    height: 80px;
+    width: 260px;
+    
+    background-color: #7736b84b;
+    color: white;
+    border: none;
+    color: #c9c9c994;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.reshwid:hover {
+    box-shadow: inset 0 0 15px #c5b3eb7a;
+}
+
+.respass:hover {
+    box-shadow: inset 0 0 15px #c5b3eb7a;
+}
+
+.key-input {
+    width: 140px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.301);
+    border: 1px solid #704fb850;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: #998bb8d2;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    transform: translateY(-10px);
+    transition: box-shadow 0.3s ease;
+}
+
+.key-input::placeholder {
+    color: #998bb896;
+}
+
+.key-input:focus {
+    box-shadow: 0 0 6px #704fb877;
+    outline: none;
+}
+
+.key-input:hover {
+    box-shadow: 0 0 6px #704fb877;
+    outline: none;
+}
+
+.activate-btn {
+    background-color: #554d66a2;
+    color: #fff;
+    border: 1px solid #704fb8;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activate-btn:hover {
+    background-color: #704fb8;
+    box-shadow: 0 0 10px #c5b3eb7a;
+}
+
+.dynamic-island {
+    background-color: rgba(0, 128, 0, 0.3);
+    color: #9ef59e;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(3px);
+}
+
+::selection {
+    background-color: #6200ea;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content h1, .content h2 {
+        font-size: 28px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+    }
+}
